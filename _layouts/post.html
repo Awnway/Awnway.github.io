@@ -62,9 +62,11 @@ layout: default
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
                 
-                {% if site.gittalk_comment %}
+                {% if site.gitalk_comment %}
                 <!-- gittalk 评论框 start -->
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
+                    {% include gitalk.html %}
+                </div>
                 <!-- gittalk 评论框 end -->
                 {% endif %}
                 
@@ -108,30 +110,7 @@ layout: default
   {% include mathjax_support.html %}
 {% endif %}
 
-{% if site.gittalk_comment %}
-<!-- gittalk 评论-->
 
-  <!-- Link Gitalk 的支持文件  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
-<script src="/js/md5.min.js"></script>
-<div id="gitalk-container"></div>     
-<script type="text/javascript">
-    var gitalk = new Gitalk({
- 
-    // gitalk的主要参数
-        clientID: 'ab95a9a4c8cfccb23008',
-        clientSecret: '745de2e970088305fcb448d176671570d3e69404',
-        repo: 'BlogComment',
-        owner: 'Awnway',
-        admin: ['Awnway'],
-        id: md5(location.pathname),
-        
-    });
-    gitalk.render('gitalk-container');
-</script> 
-<!-- Gitalk end -->
-{% endif %}
 
 
 {% if site.netease_comment %}

@@ -65,7 +65,7 @@ disqus_username: false
 netease_comment: false
 
 # gittalk settings
-gittalk_comment: true
+gitalk_comment: true
 
 
 # Analytics settings
